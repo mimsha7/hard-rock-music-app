@@ -1,7 +1,7 @@
 const searchSongs = async () => {
    const searchInput = document.getElementById('searchInput').value;
     const url = `https://api.lyrics.ovh/suggest/${searchInput}`;
-
+    toggleSpiner();
     try {
         const res = await fetch(url);
         const data = await res.json();
@@ -32,12 +32,13 @@ const displaySongs = songs => {
     </div>
     `;
     songInfo.appendChild(songDiv);
+    toggleSpiner();
 });
 }
 
 const getLyrics = async (artist, title) => {
     const url = `https://api.lyrics.ovh/v1/${artist}/${title}`;
-
+    toggleSpiner();
     try {
         const res = await fetch(url);
         const data = await res.json();
@@ -50,10 +51,24 @@ const getLyrics = async (artist, title) => {
 const displayLyrics = lyrics => {
    const songLyrics = document.getElementById('song-lyrics');
     songLyrics.innerText = lyrics;
+    toggleSpiner();
 }
 
 const displayError = error => {
     const errMsg = document.getElementById('err-msg');
     errMsg.innerText = error;
+}
+
+const toggleSpiner = () => {
+    const spin = document.getElementById('spinner');
+    const songs = document.getElementById('song-Info');
+    spin.classList.toggle('d-none');
+    songs.classList.toggle('d-none');
+    // if (show) {
+    //     spin.classList.remove('d-none');  
+    // }
+    // else {
+    //     spin.classList.add('d-none');
+    // } 
 }
 
