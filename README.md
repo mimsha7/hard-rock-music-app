@@ -1,11 +1,4 @@
-# hard-rock-solution
+# hard-rock-music app
 ### Search Song
-api link: https://api.lyrics.ovh/suggest/:searchText
 
-example: https://api.lyrics.ovh/suggest/hello
-
-### Lyric
-lyric link: https://api.lyrics.ovh/v1/:artist/:title
-
-example: https://api.lyrics.ovh/v1/Adele/Hello
-# hard-rock-music-app
+https://mimsha7.github.io/hard-rock-music-app/
