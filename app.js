@@ -11,6 +11,13 @@ const searchSongs = async () => {
     }
 }
 
+document.getElementById('searchInput')
+    .addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        document.getElementById('searchBtn').click();
+    }
+});
+
 const displaySongs = songs => {
     const songInfo = document.getElementById('song-Info');
     songInfo.innerHTML = ``;
